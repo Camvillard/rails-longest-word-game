@@ -29,12 +29,12 @@ class GamesController < ApplicationController
   def score
     grid = params['grid'].split
     user_word = params['user_input']
-    if !check_is_the_word_exists(user_word)
-      @feedback = 'this word does not exists'
-    elsif !valid_grid?(user_word, grid)
-      @feedback = "this word doesn't match, dude"
-    else
-      @feedback = 'cool'
-    end
+    @feedback = if !check_is_the_word_exists(user_word)
+                  'hey dude, this word does not even exists'
+                elsif !valid_grid?(user_word, grid)
+                  "#{user_word} doesn't match with #{grid}. are you stupid ?"
+                else
+                  'cool, you won.'
+                end
   end
 end

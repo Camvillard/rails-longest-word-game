@@ -7,7 +7,8 @@ $accent-color: #368F8B;
 $text-color: #031724;
 
 * {
-margin: 0
+  margin: 0;
+  text-align : center;
 }
 
 #new_game {
@@ -17,4 +18,19 @@ margin: 0
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  & > div {
+    margin: 10px auto;
+  }
+
+  ul {
+    margin-inline-start: 0px;
+    padding-inline-start: 0px;
+  }
+
+  ul > li {
+    display: inline-block;
+    background: white;
+    padding: 10px;
+  }
 }
