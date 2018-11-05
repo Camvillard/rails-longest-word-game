@@ -1,13 +1,30 @@
-<h1>Games#new</h1>
-<p>Find me in app/views/games/new.html.erb</p>
+<div id="new_game">
+
+  <div class="title">
+    <h2>welcome to the game</h2>
+  </div>
+
+  <div class="game">
+    <h4>here are you letters. be smart</h4>
+    <ul>
+      <% @letters.each do |letter| %>
+      <li> <%= letter %> </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="guess">
+    <h4>what's the longest word you can find ?</h4>
+
+    <form action="/games/score" method="post">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type="text" name="user_input" placeholder="your word">
+      <input type="hidden" name="grid" value="<%= @letters.join %>">
+      <input type="submit" value="play">
+    </form>
+  </div>
 
 
-<h4>here are you letters. be smart</h4>
 
-<ul>
-  <% @letters.each do |letter| %>
-  <li> <%= letter %> </li>
-  <% end %>
 
-</ul>
-
+</div>

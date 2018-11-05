@@ -1,2 +1,10 @@
-<h1>Games#score</h1>
-<p>Find me in app/views/games/score.html.erb</p>
+
+<div id="result">
+  <h4><%= @feedback %></h4>
+  <p class="result">your word was <%= params["user_input"] %></p>
+  <p class="score">your score : </p>
+</div>
+
+
+
+<%= link_to "play again", new_path %>
