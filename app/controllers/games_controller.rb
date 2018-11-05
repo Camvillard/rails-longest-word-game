@@ -1,5 +1,16 @@
 require 'open-uri'
 # Games controller
+
+LETTER_SCORE = {
+  '1' => %w('a', 'e', 'i', 'o', 'n', 'r', 't', 'l', 's', 'u'),
+  '2' => %w('d','g'),
+  '3' => %w('b', 'c', 'm', 'p'),
+  '4' => %w('f', 'h', 'v', 'w', 'y'),
+  '5' => %w('k'),
+  '8' => %w('j', 'x'),
+  '10' => %w('q', 'z')
+}
+
 class GamesController < ApplicationController
   def new
     @letters = []
@@ -27,7 +38,7 @@ class GamesController < ApplicationController
   end
 
   def score
-    grid = params['grid'].split
+    grid = params['grid'].downcase.split('')
     user_word = params['user_input']
     @feedback = if !check_is_the_word_exists(user_word)
                   'hey dude, this word does not even exists'
@@ -37,4 +48,13 @@ class GamesController < ApplicationController
                   'cool, you won.'
                 end
   end
+
+  def results
+    user_word = params['user_input'].split('')
+    user_word.each do |letter|
+      LETTER_SCORE.value?(letter)
+    end
+  end
 end
+
+

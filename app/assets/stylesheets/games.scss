@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,700|Space+Mono:400,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,700|Roboto+Mono:400,700');
 
 /* ------ VARIABLES ------ */
 
@@ -13,7 +13,7 @@ $light-pink: #F5EDE7;
 $dark-green: #1A2126;
 
 $font-family--primary: 'Raleway', sans-serif;
-$font-family--accent: 'Space Mono', monospace;
+$font-family--accent: 'Roboto Mono', monospace;
 
 $font-weight-bold: 800;
 $font-weight-normal: 400;
@@ -25,7 +25,6 @@ $font-weight-normal: 400;
   text-align : center;
   font-size: 100%;
   font-family: $font-family--primary;
-  color: $text-color;
 }
 
 h2 {
@@ -40,6 +39,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: $text-color;
 
 
   & > div {
@@ -78,18 +78,30 @@ h2 {
     border: none;
     border-bottom: 4px solid $dark-green;
     margin-bottom: 10px;
+    opacity: 0.5;
   }
 
-  input[type="submit"] {
-    border-radius: 0px !important;
+  .btn {
+    margin-top: 20px;
+    border: none;
+    height: 30px;
     font-weight: $font-weight-bold;
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      background: $dark-green;
+      color: white;
+      cursor: pointer;
+    }
   }
+
 
   input[type="text"]:active,
   input[type="text"]:focus, {
     outline: 0px;
     outline-offset: 0px;
     color: $dark-green;
+    opacity: 1;
     font-family: $font-family--accent;
     font-size: 1.5rem;
     font-weight: $font-weight-bold;
@@ -102,5 +114,30 @@ h2 {
     font-weight: $font-weight-bold;
   }
 
+}
 
+
+#result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $dark-green;
+  color: white;
+  height: 100vh;
+
+  a {
+    margin-top: 40px;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: $font-weight-bold;
+    border-bottom: 3px solid white;
+    transition: all 0.3s ease-out;
+  }
+
+  a:hover {
+    background: white;
+    color: $dark-green;
+  }
 }

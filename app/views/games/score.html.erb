@@ -1,10 +1,11 @@
-
 <div id="result">
-  <h4><%= @feedback %></h4>
-  <p class="result">your word was <%= params["user_input"] %></p>
-  <p class="score">your score : </p>
+  <div class="feedback">
+    <h4><%= @feedback %></h4>
+    <p class="result">your word was <%= params["user_input"] %></p>
+    <p class="score">your score : </p>
+  </div>
+  <%= link_to "play again", new_path %>
 </div>
 
 
 
-<%= link_to "play again", new_path %>

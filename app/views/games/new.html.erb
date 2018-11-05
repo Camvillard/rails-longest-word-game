@@ -5,7 +5,7 @@
   </div>
 
   <div class="game">
-    <h4>here are you letters. be smart</h4>
+    <h4>here are your letters. be smart</h4>
     <ul>
       <% @letters.each do |letter| %>
       <li> <%= letter %> </li>
@@ -19,11 +19,8 @@
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <input type="text" name="user_input" placeholder="what's the longest word you can find ?">
       <input type="hidden" name="grid" value="<%= @letters.join %>">
-      <input type="submit" value="play">
+      <input type="submit" value="play" class="btn">
     </form>
   </div>
-
-
-
 
 </div>
